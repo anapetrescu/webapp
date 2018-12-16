@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import {UserService} from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
 import {
   trigger,
   state,
@@ -31,11 +34,20 @@ import {
 export class RegisterComponent implements OnInit {
 
    float = true;
+   users: User[] = [];
    text = "Create a account and find out what people say about your bussines!"
    buttonText = "Sign up"
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.loadAllUsers();
+    console.log(this.users);
+  }
+
+  private loadAllUsers() {
+    this.userService.getAll().subscribe((res:Response) => {
+      console.log(res);
+  });
   }
 
   switch() {
@@ -48,5 +60,20 @@ export class RegisterComponent implements OnInit {
       this.text = "Welcome back!"
       this.buttonText = "Sign in"
      }
+  }
+
+  public register(){
+    var user = {
+      username: (<HTMLInputElement>document.getElementById('username')).value.toString(),
+      password:   (<HTMLInputElement>document.getElementById('password')).value.toString(),
+      first_name: (<HTMLInputElement>document.getElementById('firstName')).value.toString(),
+      last_name:  (<HTMLInputElement>document.getElementById('lastName')).value.toString(),
+      company_name: (<HTMLInputElement>document.getElementById('companyName')).value.toString(),
+      email: (<HTMLInputElement>document.getElementById('email')).value.toString()
+  }
+    this.userService.register(user).subscribe(() =>{
+      console.log("success");
+    }
+    )
   }
 }

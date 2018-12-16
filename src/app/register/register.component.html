@@ -3,20 +3,20 @@
        <div class='register'>
            <form>
              <h2 class = "registerTitle">Sing up</h2>
-             <input class = "registerInputs" type="text" name="username" placeholder="Username...">
-             <input class = "registerInputs" type="text" name="firstName" placeholder="First Name...">
-             <input class = "registerInputs" type="text" name="lastName" placeholder="Last Name...">
-             <input class = "registerInputs" type="email" name="email" placeholder="Email...">
-             <input class = "registerInputs" type="text" name="companyName" placeholder="Company name...">
-             <input class = "registerInputs" type="password" name="password" placeholder="Password...">
-             <input class = "registerInputs" type="password" name="repeatPassword" placeholder="Repeat Password...">
-             <button class = "registerButton" type="submit">Sign up</button>
+             <input class = "registerInputs" type="text" ngModel = "username" id="username" placeholder="Username...">
+             <input class = "registerInputs" type="text" ngModel = "firstName" id="firstName" placeholder="First Name...">
+             <input class = "registerInputs" type="text" ngModel = "lastName" id="lastName" placeholder="Last Name...">
+             <input class = "registerInputs" type="email" ngModel = "email" id="email" placeholder="Email...">
+             <input class = "registerInputs" type="text" ngModel = "companyName" id="companyName" placeholder="Company name...">
+             <input class = "registerInputs" type="password" ngModel = "password" id="password" placeholder="Password...">
+             <input class = "registerInputs" type="password" id="repeatPassword" placeholder="Repeat Password...">
+             <button class = "registerButton" type="submit" (click)='register()'>Sign up</button>
            </form>
        </div>
        <div class='login'>
            <h2 class = "loginTitle">Sign in</h2>
-           <input class = "loginInputs" type="text" name="username" placeholder="Username...">
-           <input class = "loginInputs" type="password" name="password" placeholder="Password...">
+           <input class = "loginInputs" type="text" id="usernameLogin" placeholder="Username...">
+           <input class = "loginInputs" type="password" id="passwordLogin" placeholder="Password...">
            <button class = "loginButton" type="submit">Sing in</button>
        </div>
        <div class='switch' [@floatDiv] = "float ? 'left' : 'right'">
