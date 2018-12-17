@@ -17,7 +17,7 @@
            <h2 class = "loginTitle">Sign in</h2>
            <input class = "loginInputs" type="text" id="usernameLogin" placeholder="Username...">
            <input class = "loginInputs" type="password" id="passwordLogin" placeholder="Password...">
-           <button class = "loginButton" type="submit">Sing in</button>
+           <button class = "loginButton" type="submit" (click)='login()'>Sing in</button>
        </div>
        <div class='switch' [@floatDiv] = "float ? 'left' : 'right'">
            <p class="switchText">{{text}}</p>

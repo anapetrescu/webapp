@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {UserService} from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
+import {Globals} from 'src/app/services/globals'
 import {
   trigger,
   state,
@@ -34,19 +35,18 @@ import {
 export class RegisterComponent implements OnInit {
 
    float = true;
-   users: User[] = [];
+   users = [];
    text = "Create a account and find out what people say about your bussines!"
    buttonText = "Sign up"
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private globals: Globals) { }
 
   ngOnInit() {
     this.loadAllUsers();
-    console.log(this.users);
   }
 
   private loadAllUsers() {
-    this.userService.getAll().subscribe((res:Response) => {
-      console.log(res);
+    this.userService.getAll().subscribe((res:any) => {
+      this.users = res;
   });
   }
 
@@ -71,9 +71,23 @@ export class RegisterComponent implements OnInit {
       company_name: (<HTMLInputElement>document.getElementById('companyName')).value.toString(),
       email: (<HTMLInputElement>document.getElementById('email')).value.toString()
   }
+
     this.userService.register(user).subscribe(() =>{
       console.log("success");
     }
     )
+  }
+
+  public login(){
+    var user = {
+      username: (<HTMLInputElement>document.getElementById('usernameLogin')).value.toString(),
+      password:   (<HTMLInputElement>document.getElementById('passwordLogin')).value.toString()
+    }
+
+    this.userService.login(user).subscribe((res:any)=>{
+      this.globals.currentUser = res;
+      console.log(res);
+      console.log(this.globals.currentUser);
+    });
   }
 }
