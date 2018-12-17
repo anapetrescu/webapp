@@ -7,11 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { Globals } from './services/globals';
+import { ProfilPageComponent } from './profil-page/profil-page.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfilPageComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
