@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Globals} from 'src/app/services/globals';
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  currentUser = {};
+  constructor(private globals: Globals) {
+    this.currentUser = globals.currentUser;
+   }
 
   ngOnInit() {
   }
