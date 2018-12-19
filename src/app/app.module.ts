@@ -11,6 +11,7 @@ import { ProfilPageComponent } from './profil-page/profil-page.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
+import { EmailsComponent } from './emails/emails.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormComponent } from './form/form.component';
     RegisterComponent,
     ProfilPageComponent,
     MenuComponent,
-    FormComponent
+    FormComponent,
+    EmailsComponent
   ],
   imports: [
     BrowserModule,

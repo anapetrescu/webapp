@@ -10,10 +10,12 @@ export class MenuComponent implements OnInit {
 
   currentUser = {};
   constructor(private globals: Globals) {
-    this.currentUser = globals.currentUser;
+    
    }
 
   ngOnInit() {
+    this.currentUser = this.globals.currentUser;
+    console.log(this.globals.currentUser);
   }
 
 }
