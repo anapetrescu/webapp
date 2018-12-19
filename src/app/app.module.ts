@@ -41,6 +41,10 @@ import { ViewFormComponent } from './view-form/view-form.component';
       {
         path: 'form',
         component: FormComponent
+      },
+      {
+        path: 'viewForm',
+        component: ViewFormComponent
       }
     ])
   ],
