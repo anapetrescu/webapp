@@ -1,0 +1,28 @@
+.tp{
+    margin-top:5%
+}
+
+.inp {
+    margin-left: 20%;
+    width: 70%;
+}
+
+.addContact{
+    margin-left: 90%;
+}
+
+.inp-sz{
+    width: 100px;
+}
+
+.background{
+    background-color: rgb(245, 245, 220);
+    width: 15%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    overflow-x: auto;
+    overflow-y: auto;
+    position: fixed;
+}

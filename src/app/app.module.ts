@@ -39,6 +39,10 @@ import { EmailsComponent } from './emails/emails.component';
       {
         path: 'form',
         component: FormComponent
+      },
+      {
+        path: 'contact',
+        component: EmailsComponent
       }
     ])
   ],
