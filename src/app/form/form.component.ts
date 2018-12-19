@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Globals} from 'src/app/services/globals';
 
 @Component({
   selector: 'app-form',
@@ -9,7 +10,7 @@ export class FormComponent implements OnInit {
   inputs = [1];
   numberOfInputs = 1;
 
-  constructor() { }
+  constructor(private globals: Globals) { }
   
   ngOnInit() {
   }
@@ -25,11 +26,19 @@ export class FormComponent implements OnInit {
 
   public deleteInput() {
     this.numberOfInputs--;
-    if( this.numberOfInputs < 1){
+    if( this.numberOfInputs <= 1){
       this.numberOfInputs++;
       alert("Minimum numbers of questions!");
       return;
     }
     this.inputs.pop();
+  }
+
+  public seeQuestions(){
+    var questions = document.getElementsByTagName('input');
+    for(let i = 0 ; i < questions.length; i++){
+      this.globals.questions[i] = questions[i].value.toString();
+    }
+    console.log(this.globals.questions);
   }
 }

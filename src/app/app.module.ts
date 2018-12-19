@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
 import { EmailsComponent } from './emails/emails.component';
+import { ViewFormComponent } from './view-form/view-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EmailsComponent } from './emails/emails.component';
     ProfilPageComponent,
     MenuComponent,
     FormComponent,
-    EmailsComponent
+    EmailsComponent,
+    ViewFormComponent
   ],
   imports: [
     BrowserModule,

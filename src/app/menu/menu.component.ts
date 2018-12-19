@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.globals.currentUser;
-    console.log(this.globals.currentUser);
+    console.log(this.currentUser);
   }
 
 }
