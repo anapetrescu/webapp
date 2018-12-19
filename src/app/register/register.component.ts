@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {UserService} from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
-import {Globals} from 'src/app/services/globals'
+import {Globals} from 'src/app/services/globals';
+import { Router } from '@angular/router';
 import {
   trigger,
   state,
@@ -38,12 +39,14 @@ export class RegisterComponent implements OnInit {
    users = [];
    text = "Create a account and find out what people say about your bussines!"
    buttonText = "Sign up"
-  constructor(private userService: UserService, private globals: Globals) { }
+   loginError = "";
+  constructor(private userService: UserService, private globals: Globals, private router: Router) {} 
 
   ngOnInit() {
     this.loadAllUsers();
+    
   }
-
+ 
   private loadAllUsers() {
     this.userService.getAll().subscribe((res:any) => {
       this.users = res;
@@ -86,8 +89,9 @@ export class RegisterComponent implements OnInit {
 
     this.userService.login(user).subscribe((res:any)=>{
       this.globals.currentUser = res;
-      console.log(res);
-      console.log(this.globals.currentUser);
+      this.router.navigate(['profilePage']);
+    }, (err) =>{
+      this.loginError = "Username or password are incorect!";
     });
   }
 }
