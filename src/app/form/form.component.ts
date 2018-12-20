@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Globals} from 'src/app/services/globals';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -10,7 +11,7 @@ export class FormComponent implements OnInit {
   inputs = [1];
   numberOfInputs = 1;
 
-  constructor(private globals: Globals) { }
+  constructor(private globals: Globals,private router: Router) { }
   
   ngOnInit() {
   }
@@ -40,5 +41,6 @@ export class FormComponent implements OnInit {
       this.globals.questions[i] = questions[i].value.toString();
     }
     console.log(this.globals.questions);
+    this.router.navigate(['viewForm']);
   }
 }

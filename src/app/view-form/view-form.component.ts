@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Globals} from 'src/app/services/globals';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-form',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-form.component.scss']
 })
 export class ViewFormComponent implements OnInit {
-
-  constructor() { }
+  questions = []
+  constructor(private globals: Globals, private router: Router) { }
 
   ngOnInit() {
+    this.questions = this.globals.questions;
+    console.log(this.questions);
   }
 
 }
