@@ -40,6 +40,18 @@ a{
     transition: 0.5s;
 }
 
+.contact p{
+    font-size: 150%;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    color: rgb(48, 48, 48);
+
+}
+.contact p:hover{
+    font-size: 160%;
+    color: rgb(240, 180, 29);
+    transition: 0.5s;
+}
+
 .form p{
     font-size: 150%;
     font-family: 'Arial Narrow Bold', sans-serif;
