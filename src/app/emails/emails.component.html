@@ -3,11 +3,20 @@
 </div>
 <div class="tp">
   <div class='inp'>
+      <p>First name:</p>
+      <div class="input-group mb-3">
+          <input type="text" class="form-control" id="firstName" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <p>Last name:</p>
+      <div class="input-group mb-3">
+          <input type="text" class="form-control" id="lastName" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
       <p>Email:</p>
       <div class="input-group mb-3">
-          <input type="text" class="form-control" id="q1" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+          <input type="text" class="form-control" id="email" aria-label="Default" aria-describedby="inputGroup-sizing-default">
       </div>
   </div>
+  <div class="contactError"><strong>{{contactError}}</strong></div>
 </div>
 <button type="button" class="btn btn-info addContact" (click)='addContact()'>Add contact</button>
 

@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from 'src/app/services/user.service';
+import {FormService} from 'src/app/services/form.service';
+import {Globals} from 'src/app/services/globals';
+import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
+import { Email } from 'src/app/models/email';
 
 @Component({
   selector: 'app-emails',
@@ -6,10 +12,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./emails.component.scss']
 })
 export class EmailsComponent implements OnInit {
-
-  constructor() { }
+  contactError;
+  currentUser;
+  constructor(private userService: UserService,private formService: FormService, private globals: Globals, private router: Router) {} 
 
   ngOnInit() {
+    this.currentUser = this.globals.currentUser;
   }
-
+  addContact(){
+    var contact = {
+      firstName: (<HTMLInputElement>document.getElementById('firstName')).value.toString(),
+      lastName: (<HTMLInputElement>document.getElementById('lastName')).value.toString(),
+      email: (<HTMLInputElement>document.getElementById('email')).value.toString()
+    }
+    this.formService.insertEmail(contact, this.currentUser.id).subscribe((res:any)=>{
+      this.router.navigate(['contact']);
+    }, (err) =>{
+      this.contactError = "This contact already exists!";
+    });
+  }
 }
