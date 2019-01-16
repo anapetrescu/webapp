@@ -89,6 +89,7 @@ export class RegisterComponent implements OnInit {
 
     this.userService.login(user).subscribe((res:any)=>{
       this.globals.currentUser = res;
+      console.log(res);
       this.router.navigate(['profilePage']);
     }, (err) =>{
       this.loginError = "Username or password are incorect!";
