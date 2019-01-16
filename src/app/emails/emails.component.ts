@@ -25,10 +25,21 @@ export class EmailsComponent implements OnInit {
       lastName: (<HTMLInputElement>document.getElementById('lastName')).value.toString(),
       email: (<HTMLInputElement>document.getElementById('email')).value.toString()
     }
-    this.formService.insertEmail(contact, this.currentUser.id).subscribe((res:any)=>{
+    this.formService.insertEmail(contact).subscribe((res:any)=>{
+      console.log("ajunge si aici");
+      this.formService.insertMap(contactMap).subscribe((res:any)=>
+    {
+      console.log("acum e okay");
       this.router.navigate(['contact']);
     }, (err) =>{
-      this.contactError = "This contact already exists!";
+      this.contactError = "Try again!";
     });
-  }
-}
+      }, (err) =>{
+        this.contactError = "This conntact already exists!";
+      });
+    var contactMap = {
+      email:  (<HTMLInputElement>document.getElementById('email')).value.toString(),
+      userId: this.currentUser.user_id
+    }  
+    } 
+  }  

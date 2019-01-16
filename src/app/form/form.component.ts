@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import {Globals} from 'src/app/services/globals';
 import { Router } from '@angular/router';
-=======
->>>>>>> fb64bb9418dbd70609bea46dbbc705e1dbd776fc
 
 @Component({
   selector: 'app-form',
@@ -13,12 +10,7 @@ import { Router } from '@angular/router';
 export class FormComponent implements OnInit {
   inputs = [1];
   numberOfInputs = 1;
-
-<<<<<<< HEAD
   constructor(private globals: Globals,private router: Router) { }
-=======
-  constructor() { }
->>>>>>> fb64bb9418dbd70609bea46dbbc705e1dbd776fc
   
   ngOnInit() {
   }
