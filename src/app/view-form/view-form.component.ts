@@ -16,4 +16,7 @@ export class ViewFormComponent implements OnInit {
     console.log(this.questions);
   }
 
+  public response(){
+    this.router.navigate(['answerForm']);
+  }
 }

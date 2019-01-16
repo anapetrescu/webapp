@@ -36,7 +36,9 @@ export class FormComponent implements OnInit {
 
   public seeQuestions(){
     var questions = document.getElementsByTagName('input');
+    this.globals.questions = [];
     for(let i = 0 ; i < questions.length; i++){
+      console.log(questions[i].value.toString());
       this.globals.questions[i] = questions[i].value.toString();
     }
     console.log(this.globals.questions);
