@@ -3,10 +3,11 @@
 </div>
 
 <div class="tp">
-  <div *ngFor='let question of questions; let i = index' class='inp'>
-      <p>Question #{{i+1}}</p>
-      <strong>{{question}}</strong>
+  <div style="margin-bottom: 20px" *ngFor='let question of questions; let i = index' class='inp'>
+      <p style="font-weight:bold;">Question #{{i+1}}</p>
+      <p>{{question}}</p>
   </div>
 </div>
 
 <button type="button" class="btn btn-info back" (click)='goBack()'>Back </button>
+<button type="button" class="btn btn-info back" (click)='response()'>To response </button>

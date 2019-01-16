@@ -12,6 +12,8 @@ import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
 import { EmailsComponent } from './emails/emails.component';
+import { ViewFormComponent } from './view-form/view-form.component';
+import { AnswerFormComponent } from './answer-form/answer-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { EmailsComponent } from './emails/emails.component';
     ProfilPageComponent,
     MenuComponent,
     FormComponent,
-    EmailsComponent
+    EmailsComponent,
+    ViewFormComponent,
+    AnswerFormComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,14 @@ import { EmailsComponent } from './emails/emails.component';
       {
         path: 'contact',
         component: EmailsComponent
+      },
+      {
+        path: 'viewForm',
+        component: ViewFormComponent
+      },
+      {
+        path:'answerForm',
+        component: AnswerFormComponent
       }
     ])
   ],
