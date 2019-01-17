@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Globals} from 'src/app/services/globals';
 import { Router } from '@angular/router';
+import {FormService} from 'src/app/services/form.service';
 
 @Component({
   selector: 'app-view-form',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ViewFormComponent implements OnInit {
   questions = []
-  constructor(private globals: Globals, private router: Router) { }
+  constructor(private formService: FormService, private globals: Globals, private router: Router) {} 
 
   ngOnInit() {
     this.questions = this.globals.questions;
