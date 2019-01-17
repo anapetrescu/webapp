@@ -39,8 +39,9 @@ export class FormComponent implements OnInit {
     this.globals.questions = [];
     for(let i = 0 ; i < questions.length; i++){
       console.log(questions[i].value.toString());
-      this.globals.questions[i] = questions[i].value.toString();
+      this.globals.questions[i] = questions[i+1].value.toString();
     }
+    this.globals.questions[questions.length] = questions[0].value.toString();
     console.log(this.globals.questions);
     this.router.navigate(['viewForm']);
   }
