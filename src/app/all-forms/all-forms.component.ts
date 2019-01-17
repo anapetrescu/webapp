@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ClientService} from 'src/app/services/client.service';
+import {Globals} from 'src/app/services/globals';
 
 @Component({
   selector: 'app-all-forms',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllFormsComponent implements OnInit {
 
-  constructor() { }
+  forms: any;
+  email: any;
+  constructor(private clientService: ClientService, private globals: Globals) { }
 
   ngOnInit() {
+    this.email = this.globals.email;
+    this.forms = this.clientService.allForms(this.email);
   }
 
 }

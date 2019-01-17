@@ -49,7 +49,7 @@ import { AnswerFormComponent } from './answer-form/answer-form.component';
         component: EmailsComponent
       },
       {
-        path: 'viewForm',
+        path: 'viewForm/:id',
         component: ViewFormComponent
       },
       {
