@@ -38,11 +38,11 @@ export class FormComponent implements OnInit {
   public seeQuestions(){
     var questions = document.getElementsByTagName('input');
     this.globals.questions = []; 
-    for(let i = 0 ; i < questions.length; i++){
+    for(let i = 0 ; i < questions.length-1; i++){
       console.log(questions[i].value.toString());
       this.globals.questions[i] = questions[i+1].value.toString();
     }
-    
+    this.globals.questions[questions.length] = questions[0].value.toString();
     console.log(this.globals.questions);
     this.router.navigate(['viewForm']);
   }

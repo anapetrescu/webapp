@@ -14,7 +14,8 @@ import { FormComponent } from './form/form.component';
 import { EmailsComponent } from './emails/emails.component';
 import { ViewFormComponent } from './view-form/view-form.component';
 import { AnswerFormComponent } from './answer-form/answer-form.component';
-
+import { InsertEmailComponent} from './insert-email/insert-email.component';
+import {AllFormsComponent} from './all-forms/all-forms.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,9 @@ import { AnswerFormComponent } from './answer-form/answer-form.component';
     FormComponent,
     EmailsComponent,
     ViewFormComponent,
-    AnswerFormComponent
+    AnswerFormComponent,
+    InsertEmailComponent,
+    AllFormsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,12 +52,20 @@ import { AnswerFormComponent } from './answer-form/answer-form.component';
         component: EmailsComponent
       },
       {
-        path: 'viewForm/:id',
+        path: 'viewForm',
         component: ViewFormComponent
       },
       {
-        path:'answerForm',
+        path:'allForms/answerForm/:id',
         component: AnswerFormComponent
+      },
+      {
+        path:'insertEmail',
+        component: InsertEmailComponent
+      },
+      {
+        path: 'allForms',
+        component: AllFormsComponent
       }
     ])
   ],

@@ -6,11 +6,11 @@
 <div class="tp">
   <div style="margin-bottom: 20px" *ngFor='let question of questions; let i = index' class='inp'>
       <h4><span style="background-color: orange; border-radius: 50px;" class="badge">#{{i+1}}</span>&nbsp;{{question}}</h4>
-      <label style="margin-right:35px;"><input type="radio" name="rad">1</label>
-      <label style="margin-right:35px;"><input type="radio" name="rad">2</label>
-      <label style="margin-right:35px;"><input type="radio" name="rad">3</label>
-      <label style="margin-right:35px;"><input type="radio" name="rad">4</label>
-      <label style="margin-right:35px;"><input type="radio" name="rad">5</label>
+      <label style="margin-right:35px;"><input type="radio" name="rad{{i}}">1</label>
+      <label style="margin-right:35px;"><input type="radio" name="rad{{i}}">2</label>
+      <label style="margin-right:35px;"><input type="radio" name="rad{{i}}">3</label>
+      <label style="margin-right:35px;"><input type="radio" name="rad{{i}}">4</label>
+      <label style="margin-right:35px;"><input type="radio" name="rad{{i}}">5</label>
   </div>
   <button type="button" class="btn btn-info addInput" (click)='sendAnswer()'>Send</button><br>
 </div>
