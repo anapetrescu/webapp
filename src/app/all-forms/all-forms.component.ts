@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class AllFormsComponent implements OnInit {
 
   forms: any;
+<<<<<<< HEAD
   email: any;
   form;
   constructor(private clientService: ClientService, private globals: Globals, private router: Router) { }
@@ -31,6 +32,15 @@ export class AllFormsComponent implements OnInit {
     this.form = this.forms[i];
     this.globals.allQuestions = this.form;
     this.router.navigate(['allForms/answerForm/', this.form._id]);
+=======
+  email;
+  constructor(private clientService: ClientService, private globals: Globals) { }
+
+  ngOnInit() {
+    this.email = this.globals.email;
+    console.log(this.email);
+    this.forms = this.clientService.allForms(this.email);
+>>>>>>> ec052b769c1ac188db2d124ad6744ed944fed757
   }
 
 }

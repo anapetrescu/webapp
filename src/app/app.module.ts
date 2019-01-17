@@ -14,8 +14,14 @@ import { FormComponent } from './form/form.component';
 import { EmailsComponent } from './emails/emails.component';
 import { ViewFormComponent } from './view-form/view-form.component';
 import { AnswerFormComponent } from './answer-form/answer-form.component';
+<<<<<<< HEAD
 import { InsertEmailComponent} from './insert-email/insert-email.component';
 import {AllFormsComponent} from './all-forms/all-forms.component';
+=======
+import { AllFormsComponent } from './all-forms/all-forms.component'
+import { InsertEmailComponent } from './insert-email/insert-email.component';
+
+>>>>>>> ec052b769c1ac188db2d124ad6744ed944fed757
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +32,13 @@ import {AllFormsComponent} from './all-forms/all-forms.component';
     EmailsComponent,
     ViewFormComponent,
     AnswerFormComponent,
+<<<<<<< HEAD
     InsertEmailComponent,
     AllFormsComponent
+=======
+    AllFormsComponent,
+    InsertEmailComponent
+>>>>>>> ec052b769c1ac188db2d124ad6744ed944fed757
   ],
   imports: [
     BrowserModule,
@@ -56,6 +67,7 @@ import {AllFormsComponent} from './all-forms/all-forms.component';
         component: ViewFormComponent
       },
       {
+<<<<<<< HEAD
         path:'allForms/answerForm/:id',
         component: AnswerFormComponent
       },
@@ -66,6 +78,18 @@ import {AllFormsComponent} from './all-forms/all-forms.component';
       {
         path: 'allForms',
         component: AllFormsComponent
+=======
+        path:'answerForm/:id',
+        component: AnswerFormComponent
+      },
+      {
+        path:'allForms',
+        component: AllFormsComponent
+      },
+      {
+        path: 'insertEmail',
+        component: InsertEmailComponent
+>>>>>>> ec052b769c1ac188db2d124ad6744ed944fed757
       }
     ])
   ],

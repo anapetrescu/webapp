@@ -1,3 +1,19 @@
+
 <div class="background">
     <app-menu></app-menu>
 </div>
+
+<div class="tp">
+    <div style="margin-bottom: 20px" *ngFor='let form of forms; let i = index' class='inp'>
+        <button (click) ='showStatistics()'>{{form.formName}}</button>>
+    </div>
+</div>
+
+<div class = "tp">
+    <div class="inp">
+        <div id="chartdiv"></div>
+        <div id="chartdiv1"></div>
+        <div id="chartdiv2"></div>
+    </div>
+</div>
+

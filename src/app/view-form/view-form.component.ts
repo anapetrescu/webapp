@@ -17,18 +17,11 @@ export class ViewFormComponent implements OnInit {
     console.log(this.questions);
   }
 
-  public send(){
-      var questions = {
-        formName: this.questions[5],
-        q1: this.questions[0],
-        q2: this.questions[1],
-        q3: this.questions[2],
-        q4: this.questions[3],
-        q5: this.questions[4],
-      };
-      this.formService.insertQuestion(questions).subscribe((res:any)=>{
-        }, (err) =>{
-         
-        });
-}
+  public response(){
+    this.router.navigate(['answerForm']);
+  }
+
+  public goBack() {
+    this.router.navigate(['form']);
+  }
 }
