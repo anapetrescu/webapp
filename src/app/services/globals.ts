@@ -5,5 +5,5 @@ import { User } from '../models/user';
 export class Globals {
   currentUser: User;
   questions: any;
-  isUser: any;
+  email:any;
 }
