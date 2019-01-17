@@ -27,9 +27,18 @@ export class EmailsComponent implements OnInit {
     };
     this.formService.insertEmail(contact).subscribe((res:any)=>{
       console.log("ajunge si aici");
+      this.contactError = "";
       }, (err) =>{
         this.contactError = "This conntact already exists!";
       });
-
+    var contactMap = {
+      email:  (<HTMLInputElement>document.getElementById('email')).value.toString()
+    };
+    this.formService.insertMap(contactMap).subscribe((res:any)=>{
+      console.log("ajunge si aici2");
+      this.contactError = "";
+      }, (err) =>{
+      
+      });
     } 
   }  

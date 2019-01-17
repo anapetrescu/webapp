@@ -43,6 +43,7 @@ export class RegisterComponent implements OnInit {
   constructor(private userService: UserService, private globals: Globals, private router: Router) {} 
 
   ngOnInit() {
+    
     this.loadAllUsers();
     
   }
@@ -88,8 +89,7 @@ export class RegisterComponent implements OnInit {
     }
 
     this.userService.login(user).subscribe((res:any)=>{
-      this.globals.currentUser = res;
-      console.log(res);
+      this.globals.currentUser = res.token;
       this.router.navigate(['profilePage']);
     }, (err) =>{
       this.loginError = "Username or password are incorect!";
