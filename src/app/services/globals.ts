@@ -6,4 +6,5 @@ export class Globals {
   currentUser: User;
   questions: any;
   email:any;
+  answerData:any;
 }

@@ -19,4 +19,8 @@ export class ViewFormComponent implements OnInit {
   public response(){
     this.router.navigate(['answerForm']);
   }
+
+  public goBack() {
+    this.router.navigate(['form']);
+  }
 }

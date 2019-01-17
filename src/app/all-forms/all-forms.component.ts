@@ -10,11 +10,12 @@ import {Globals} from 'src/app/services/globals';
 export class AllFormsComponent implements OnInit {
 
   forms: any;
-  email: any;
+  email;
   constructor(private clientService: ClientService, private globals: Globals) { }
 
   ngOnInit() {
     this.email = this.globals.email;
+    console.log(this.email);
     this.forms = this.clientService.allForms(this.email);
   }
 
